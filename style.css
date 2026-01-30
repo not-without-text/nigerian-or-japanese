@@ -1,0 +1,128 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align:center;
+}
+#items {
+  font-size: 2em;
+  width: 100%;
+}
+#itemparent {
+  width: min(100%, 50em);
+  text-align: center;
+  display: inline-block;
+}
+.box {
+  position: relative;
+  background: #fbfbfb
+}
+.nigerian {
+  filter: invert();
+  background: #008751;
+  z-index: 0;
+}
+td .nigerian:hover {
+  background: #03AC68
+}
+td .nigerian:focus-visible {
+  background: #07D783
+}
+.nigerian2 {
+  backdrop-filter: invert();
+  z-index: 2;
+  pointer-events: none;
+}
+.nigerian, .nigerian2, .japanese {
+  display: inline-block;
+  user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+.japanese {
+  background: #a8323a;
+  mix-blend-mode: lighten;
+}
+td .japanese:hover {
+  background: #D53E48;
+}
+td .japanese:focus-visible {
+  background: #F34954;
+}
+.worditem {
+  transition: transform 1s;
+  font-size: 0.75em
+}
+.worditem-j {
+  transform: translate(100%,0);
+  background: #fbfbfb;
+}
+.worditem-n {
+  transform: translate(-100%,0);
+  background: transparent;
+}
+.worditem-jn {
+  animation: 1s ease 0s 1 forwards to_trans;
+}
+.worditem-nj {
+  animation: 1s ease 0s 1 forwards to_white;
+}
+.correct {
+  background: #11E111;
+  background: linear-gradient(90deg,rgba(17, 225, 17, 1) 0%, rgba(55, 166, 18, 1) 100%);
+}
+.ntext {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+td {
+  width: calc(100% / 3);
+  position: relative
+}
+button {
+  width: 100%;
+  border: none;
+}
+
+@keyframes to_trans {
+  0% {
+    background: #fbfbfb;
+  }
+  29.33% {
+    background: #fbfbfb;
+  }
+  29.3306% {
+    background: transparent;
+  }
+  100% {
+    background: transparent;
+  }
+}
+@keyframes to_white {
+  0% {
+    background: transparent;
+  }
+  29.33% {
+    background: transparent;
+  }
+  29.3306% {
+    background: #fbfbfb;
+  }
+  100% {
+    background: #fbfbfb;
+  }
+}
+#bouton:not(:disabled) {
+  background: #A796C9;
+}
+#bouton:not(:disabled):hover {
+  background: #B8A6DD;
+}
+.bold {
+  font-weight: bold
+}
